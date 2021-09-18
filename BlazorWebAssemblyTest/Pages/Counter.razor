@@ -1,0 +1,24 @@
+﻿@page "/test"
+
+<input type="text" value="@value" @onchange="HandleOnChange" @onblur="HandleOnBlur">
+
+@code {
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+
+    private string value;
+
+    protected void HandleOnBlur(FocusEventArgs args)
+    {
+        Console.WriteLine("On Blur");
+    }
+
+    protected void HandleOnChange(ChangeEventArgs args)
+    {
+        Console.WriteLine("On Change");
+    }
+}
